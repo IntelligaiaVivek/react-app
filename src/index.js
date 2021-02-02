@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TableComponent from './TableComponent';
 import TimeComponent from './TimeComponent';
+import UserList from './UserList';
 
 
 import AppBar from '@material-ui/core/AppBar';
@@ -11,6 +12,8 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import './index.css';
+import axios from 'axios';
+
 
 
 export default function SimpleMenu(){
@@ -52,6 +55,7 @@ class MainComponent extends React.Component {
       name: "React",
       showHideComponent1: false,
       showHideComponent2: false,
+      persons: []
     };
     this.hideComponent = this.hideComponent.bind(this);
 
@@ -70,22 +74,28 @@ class MainComponent extends React.Component {
     }
   }
 
+  componentDidMount(){
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res => {
+      this.state.persons = res.data;
+      console.log('THE PERSONS STAte', this.state.persons)
+      // const persons = res.data;
+       this.setState({ persons: this.state.persons });
+    })
+  }
+
   render() {
-    const { showHideComponent1, showHideComponent2 } = this.state;
+
     
+    const { showHideComponent1, showHideComponent2 } = this.state;
+
+    
+   console.log('THE STATUW IN RENDED',  this.state.persons);
     return (
+
+    
+
       <div>
-        
-        {/* <div className="MuiSvgIcon-root">
-          <AppBar position="static">
-            <Toolbar>
-            <SimpleMenu/>
-              <Button color="inherit">Login</Button>
-            </Toolbar>
-          </AppBar>
-        </div> */}
-
-
         <div className="buttonComponent">
           <button className="tableComponent" onClick={() => this.hideComponent("showHideComponent1")}>
            Toggle Table component
@@ -101,6 +111,8 @@ class MainComponent extends React.Component {
             </h1>
           </div>
         </div>
+        
+       {!showHideComponent1 &&  !showHideComponent2 && <UserList userList={this.state.persons}></UserList>}
         {showHideComponent1 && <TableComponent />}
         <hr />
         {showHideComponent2 && <TimeComponent />}

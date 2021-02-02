@@ -36,3 +36,11 @@ code {
   left:600px;
   top:-25px;
 }
+.userList{
+  border-style: dashed;
+}
+
+.userListHeader{
+  left:505px;
+  position: relative;
+}
