@@ -102,17 +102,17 @@ class App extends React.Component {
 
                 <Segment inverted>
                     <Menu inverted pointing secondary>
-                        <Menu.Item href='/react-app/home'
+                        <Menu.Item href='/home'
                             name='home'
                             active={activeItem === 'home'}
                             onClick={this.handleItemClick}
                         />
-                        <Menu.Item href='/react-app/about'
+                        <Menu.Item href='/about'
                             name='about'
                             active={activeItem === 'about'}
                             onClick={this.handleItemClick}
                         />
-                        <Menu.Item href='/react-app/career'
+                        <Menu.Item href='/career'
                             name='career'
                             active={activeItem === 'career'}
                             onClick={this.handleItemClick}
@@ -121,10 +121,10 @@ class App extends React.Component {
                 </Segment>
 
                 <Switch>
-                    <Route exact path="/react-app/" component={Home} />
-                    <Route exact path="/react-app/home" component={Home} />
-                    <Route exact path="/react-app/about" component={About} />
-                    <Route exact path="/react-app/career" component={Career} />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/career" component={Career} />
                     <Route component={Error} />
                 </Switch>
 
