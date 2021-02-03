@@ -13,34 +13,41 @@ code {
 }
 
 .grid {
- border-style: dashed;
-}
-
-.buttonComponent{
-  background-color: gray;
-  border-style: groove;
-}
-
-.tableComponent{
-  position: relative;
-  left: 627px;
-}
-
-.timeComponent{
-  position: relative;
-  left: 789px;
-  top:-46px;
-}
-.header{
-  position: relative;
-  left:600px;
-  top:-25px;
-}
-.userList{
   border-style: dashed;
 }
 
-.userListHeader{
-  left:505px;
+.buttonComponent {
+  background-color: gray;
+  border-style    : groove;
+}
+
+.tableComponent {
   position: relative;
+  left    : 627px;
+}
+
+.timeComponent {
+  position: relative;
+  left    : 802px;
+  top     : -40px;
+}
+
+.header {
+  position: relative;
+  left    : 600px;
+  top     : -25px;
+}
+
+.userList {
+  border-style: dashed;
+}
+
+.userListHeader {
+  left    : 505px;
+  position: relative;
+}
+
+.homePage {
+  position: relative;
+  left    : 546px;
 }
