@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TableComponent from './TableComponent';
 import TimeComponent from './TimeComponent';
 import UserList from './UserList';
@@ -8,11 +7,6 @@ import Career from './Career';
 import Error from './Error';
 import Home from './Home';
 
-
-
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 
 import './index.css';
 import axios from 'axios';
@@ -23,17 +17,9 @@ import { Menu, Segment } from 'semantic-ui-react'
 import {
     Switch,
     Route,
-    Link,
-    useRouteMatch,
-    useParams,
     useLocation
 } from "react-router-dom";
-import { withRouter } from "react-router";
 
-const usePathname = () => {
-    const location = useLocation();
-    return location.pathname;
-}
 
 class App extends React.Component {
 
