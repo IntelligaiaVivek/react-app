@@ -26,6 +26,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            color: 'red',
             name: "React",
             showHideComponent1: false,
             showHideComponent2: false,
@@ -50,6 +51,9 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        setTimeout(() => {
+            this.setState({color: "yellow"})
+          }, 1000)
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then(res => {
                 this.state.persons = res.data;
@@ -63,6 +67,13 @@ class App extends React.Component {
         this.setState({ activeItem: pathName })
     }
 
+    getSnapshotBeforeUpdate(prevprops, prevstate){
+        console.log('BEFORE UPDATE THE COLOR WAS',prevstate.color)
+    }
+
+    componentDidUpdate(){
+        console.log('the updated color is ', this.state.color)
+    }
 
 
 
