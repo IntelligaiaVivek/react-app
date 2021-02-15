@@ -7,6 +7,7 @@ import Career from './Career';
 import Error from './Error';
 import Home from './Home';
 import AgGridComponent from './AgGridComponent';
+import FormComponent from './FormComponent';
 
 
 import './index.css';
@@ -134,6 +135,11 @@ class App extends React.Component {
                             active={activeItem === 'grid'}
                             onClick={this.handleItemClick}
                         />
+                         <Menu.Item href='/form'
+                            name='form'
+                            active={activeItem === 'form'}
+                            onClick={this.handleItemClick}
+                        />
                     </Menu>
                 </Segment>
 
@@ -143,6 +149,7 @@ class App extends React.Component {
                     <Route exact path="/about" component={About} />
                     <Route exact path="/career/:id" component={Career} />
                     <Route exact path="/grid" component={AgGridComponent} />
+                    <Route exact path="/form" component={FormComponent} />
                     <Route component={Error} />
                 </Switch>
 
